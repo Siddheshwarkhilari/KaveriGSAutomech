@@ -1,0 +1,33 @@
+1] Remove the Map Integration section from the contact section
+2] Decrease the size of hero-section for 'About us', 'Products', 'Gallery', 'Contact' i.e the section present at top of each page and make it smaller and effective in size
+3] I want some different carousel at home page,also the buttons in it are porperly in design, imporve it and keep this carousel very attractive that 
+   should look professional.
+4] Remove the functionaloity of light and dark mode, and keep whole website in dark mode
+5] For now, i want the changes for the pictures as
+	Logo
+	Products
+	Gallery (Photos and videos) also the featured photos
+   I will follow a directory structure where i will keep all the photos and video here regarding the topic i mentioned here 
+   so that i can customize the whole website according to me, i can replace the photos and videos with those places here.
+   Also you can mention dummy names and path from the public folder,so i will later after modification will replace them with correct names and 
+   render my photos 
+6] The Logo should be replaced with the logo that i will provide, currently i have created a public directory at root location and kept logo 
+   with name as logo.png
+7] For the contact us section, after filling all the details, the mail should be send to correct mail id that i will place here, for now consider
+   mail id as "siddheshkhilari111@gmail.com", This functionality should work properly
+8] I want 4 partner logos for each navbar, above the "Get in touch" section, just keep demo name i will replace them with correct name , these photos will
+   be at "public/partner-logos" path.
+9] Modify the navbar, and shift them to Roght side, as they are aligned in middle
+10] Adjust the alignment of photos in the gallery section, they should be in proper order and line, align them professionally
+
+
+My directory structure for the photos and image that will replace be avaliable at root directory at 
+	public/-
+		-products/
+		-logo/logo.png
+		-gallery/
+			- gallery-photo/	
+			- gallery-videos/
+
+Make sure you give dummpy names for the images and i will replace them with the correct names afterwards but make sure the path should be according to what 
+i had provided you

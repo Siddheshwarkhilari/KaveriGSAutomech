@@ -1,0 +1,169 @@
+ I need you to build a complete cross-platform mobile application using React Native, designed for a hardware manufacturing company called GS AutoMech. This is a static, multi-page, visually rich app that must work on both Android and iOS.
+
+🎯 Purpose:
+This app should serve as a digital identity for the company, showcasing its products, achievements, partners, gallery, and contact details — with a modern, animated, and interactive UI.
+
+🧱 Required Pages:
+Home Page
+
+Hero banner with company name/logo and gradient animation
+
+Sections: About Us, Products, Gallery, Contact Us
+
+Each section has a "Learn More" / "Explore" button linking to its full page
+
+Parallax background and scroll-triggered animations
+
+About Us Page
+
+Company information in detail
+
+Timeline or animated counters for milestones
+
+Button or link to view/download company brochure (PDF)
+
+Products Page
+
+Scrollable product categories (e.g., Hinges, Pumps)
+
+Product cards with image, short text
+
+Clicking opens Product Detail Page
+
+Product Detail Page
+
+Product image slider
+
+Description, features, technical specs
+
+Back navigation
+
+Gallery Page
+
+Tabs for Photos and Videos
+
+Masonry grid for photos
+
+Carousel or full-size image view
+
+Contact Us Page
+
+Contact form: name, email, message
+
+Embedded map for location (if possible)
+
+Support info: phone, email
+
+🧭 Navigation:
+Sticky top navbar on all pages with:
+
+Home
+
+About Us → Company, Brochure
+
+Products → Hinges, Pumps
+
+Gallery → Photos, Videos
+
+Contact Us → Form, Location, Support
+
+All sections also accessible from the homepage
+
+Hamburger menu or bottom tab for mobile responsiveness
+
+✨ UI Effects & Features to Include:
+✅ Visual Effects:
+
+Glassmorphism for cards and overlays
+
+Neumorphism for buttons or input fields
+
+Animated gradient background (hero)
+
+Scroll-triggered fade/slide-in components
+
+Parallax scrolling
+
+3D tilt card effect (motion or touch-based)
+
+Lottie animations
+
+Morphing icons/buttons
+
+Animated text reveal in headings
+
+✅ Navigation & Layout:
+
+Smooth animated page transitions
+
+Sticky header that shrinks on scroll
+
+Tab navigation with animation
+
+Bottom sheet modal (optional)
+
+Responsive card-based layout
+
+Floating Action Button for quick actions
+
+Dark mode toggle
+
+✅ Content Display:
+
+Animated counters for stats
+
+Progress bars or circles
+
+Timeline layout for achievements
+
+Masonry grid or carousel for products/gallery
+
+Accordion for FAQs or details (optional)
+
+🧰 Tech Stack & Dependencies:
+Use the following tools:
+
+React Native
+
+NativeWind (Tailwind CSS styling for React Native)
+
+React Navigation
+
+Lottie-react-native
+
+React-native-reanimated
+
+React-native-snap-carousel
+
+React-native-parallax-scroll-view
+
+React-native-linear-gradient
+
+React-native-masonry-list (for gallery)
+
+📁 Project Structure:
+plaintext
+Copy
+Edit
+GS-AutoMech-App/
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── lottie/
+├── components/
+│   ├── Navbar.js
+│   ├── Footer.js
+│   ├── ProductCard.js
+│   └── GalleryGrid.js
+├── screens/
+│   ├── Home.js
+│   ├── AboutUs.js
+│   ├── Products.js
+│   ├── ProductDetail.js
+│   ├── Gallery.js
+│   └── ContactUs.js
+├── navigation/
+│   └── AppNavigator.js
+├── App.js
+├── tailwind.config.js
+└── package.json
