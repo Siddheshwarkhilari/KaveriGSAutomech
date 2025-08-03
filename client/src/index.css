@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(224, 76%, 48%);
+  --primary-foreground: hsl(210, 20%, 98%);
+  --secondary: hsl(220, 14.3%, 95.9%);
+  --secondary-foreground: hsl(220, 8.9%, 46.1%);
+  --accent: hsl(220, 14.3%, 95.9%);
+  --accent-foreground: hsl(220, 8.9%, 46.1%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(224, 76%, 48%);
+  --radius: 0.5rem;
+  
+  /* Custom GS AutoMech Colors - Light Mode */
+  --gs-primary: hsl(224, 76%, 48%);
+  --gs-primary-light: hsl(217, 91%, 60%);
+  --gs-secondary: hsl(215, 20.2%, 65.1%);
+  --gs-secondary-dark: hsl(215, 25%, 27%);
+  --gs-accent: hsl(43, 96%, 56%);
+  --gs-success: hsl(142, 76%, 36%);
+  --gs-glass-bg: hsla(0, 0%, 100%, 0.1);
+  --gs-glass-border: hsla(0, 0%, 0%, 0.1);
+}
+
+.dark {
+  --background: hsl(224, 71.4%, 4.1%);
+  --foreground: hsl(210, 20%, 98%);
+  --muted: hsl(215, 27.9%, 16.9%);
+  --muted-foreground: hsl(217, 10.6%, 64.9%);
+  --popover: hsl(224, 71.4%, 4.1%);
+  --popover-foreground: hsl(210, 20%, 98%);
+  --card: hsl(224, 71.4%, 4.1%);
+  --card-foreground: hsl(210, 20%, 98%);
+  --border: hsl(215, 27.9%, 16.9%);
+  --input: hsl(215, 27.9%, 16.9%);
+  --primary: hsl(224, 76%, 48%);
+  --primary-foreground: hsl(210, 20%, 98%);
+  --secondary: hsl(215, 27.9%, 16.9%);
+  --secondary-foreground: hsl(210, 20%, 98%);
+  --accent: hsl(215, 27.9%, 16.9%);
+  --accent-foreground: hsl(210, 20%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 20%, 98%);
+  --ring: hsl(224, 76%, 48%);
+  
+  /* Dark mode custom colors */
+  --gs-primary: hsl(224, 76%, 48%);
+  --gs-primary-light: hsl(217, 91%, 60%);
+  --gs-secondary: hsl(215, 20.2%, 65.1%);
+  --gs-secondary-dark: hsl(215, 25%, 27%);
+  --gs-accent: hsl(43, 96%, 56%);
+  --gs-success: hsl(142, 76%, 36%);
+  --gs-glass-bg: hsla(224, 71%, 4%, 0.8);
+  --gs-glass-border: hsla(0, 0%, 100%, 0.1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: var(--gs-glass-bg);
+    border: 1px solid var(--gs-glass-border);
+    transition: all 0.3s ease;
+  }
+
+  .neumorphism {
+    background: hsl(0, 0%, 94%);
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px hsl(0, 0%, 74%), -20px -20px 60px hsl(0, 0%, 100%);
+  }
+
+  .neumorphism-dark {
+    background: hsl(215, 25%, 27%);
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px hsl(215, 25%, 17%), -20px -20px 60px hsl(215, 25%, 37%);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(-45deg, var(--gs-primary), var(--gs-primary-light), var(--gs-success), var(--gs-accent));
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .product-card {
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.05);
+  }
+
+  .masonry-grid {
+    column-count: 2;
+    column-gap: 16px;
+  }
+
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+    break-inside: avoid;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gs-primary-light), var(--gs-success));
+  }
+
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gs-primary-light);
+  }
+
+  .scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--gs-primary-light), var(--gs-success));
+    z-index: 1000;
+    transition: width 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-tilt {
+    animation: tilt 10s ease-in-out infinite;
+  }
+
+  .animate-counter {
+    animation: counter 2s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes tilt {
+  0%, 100% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: perspective(1000px) rotateX(5deg) rotateY(5deg); }
+  75% { transform: perspective(1000px) rotateX(-5deg) rotateY(-5deg); }
+}
+
+@keyframes counter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px hsla(217, 91%, 60%, 0.3); }
+  50% { box-shadow: 0 0 40px hsla(217, 91%, 60%, 0.6); }
+}
