@@ -1,0 +1,55 @@
+name: 🚀 Deploy GSAutoMech to VM
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬆️ Checkout repo (for workflow use only)
+        uses: actions/checkout@v4
+
+      - name: 🔑 SSH into VM and deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}   # ubuntu user
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            echo "🔄 Switching to root and deploying..."
+            sudo -i -u root bash << 'EOF'
+              echo "🔄 Navigating to app directory or cloning if missing"
+              if [ ! -d "~/GSAutoMech" ]; then
+                git clone https://github.com/Siddheshwarkhilari/GSAutoMech.git ~/GSAutoMech
+              fi
+              cd ~/GSAutoMech
+
+              echo "📥 Pulling latest changes"
+              git fetch origin main
+              git reset --hard origin/main
+
+              echo "📦 Checking if dependencies need update"
+              if [ -f package.json ] && [ -f package-lock.json ]; then
+                if git diff HEAD@{1}..HEAD --name-only | grep -E "package(-lock)?\.json"; then
+                  echo "📦 Dependencies changed, running npm install"
+                  npm install
+                else
+                  echo "✅ Dependencies unchanged, skipping npm install"
+                fi
+              else
+                echo "⚠️ No package.json found, skipping npm install"
+              fi
+
+              echo "🚀 Restarting application with PM2"
+              pm2 stop gsautomech-dev || true
+              pm2 delete gsautomech-dev || true
+              pm2 start npm --name "gsautomech-dev" -- run dev
+
+              echo "💾 Saving PM2 process list"
+              pm2 save
+            EOF
