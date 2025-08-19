@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬆️ Checkout repo (for workflow use only)
+      - name: ⬆️ Checkout repo
         uses: actions/checkout@v4
 
       - name: 🔑 Setup SSH Agent
@@ -28,9 +28,9 @@ jobs:
         run: |
           set -x
           ssh -tt -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-            # Switch to root shell
-            sudo su - root << 'INNER'
-              set -x   # Debug mode inside root shell
+            # Switch to root
+            sudo -i << 'INNER'
+              set -x
 
               echo "🔄 Navigating to app directory or cloning if missing"
               if [ ! -d "/root/GSAutoMech" ]; then
