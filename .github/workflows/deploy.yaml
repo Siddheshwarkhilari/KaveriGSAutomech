@@ -22,7 +22,7 @@ jobs:
       - name: 🧪 Test SSH connection (Debug Mode)
         run: |
           set -x
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "echo ✅ SSH connection successful"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "echo SSH connection successful"
 
       - name: 🚀 Deploy to VM
         run: |
