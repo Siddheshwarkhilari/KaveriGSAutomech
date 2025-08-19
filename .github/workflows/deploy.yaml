@@ -14,20 +14,25 @@ jobs:
       - name: ⬆️ Checkout repo (for workflow use only)
         uses: actions/checkout@v4
 
-      - name: 🔑 SSH into VM and deploy (Debug Mode)
-        uses: appleboy/ssh-action@v1.0.0
+      - name: 🔑 Setup SSH Agent
+        uses: webfactory/ssh-agent@v0.7.0
         with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.VM_PRIVATE_KEY }}
-          debug: true   # 🔍 Enable debug logs for SSH action
-          script_stop: true  # ❌ Stop immediately on error
-          script: |
-            set -x   # 🔍 Print every command before executing
+          ssh-private-key: ${{ secrets.VM_PRIVATE_KEY }}
+
+      - name: 🧪 Test SSH connection (Debug Mode)
+        run: |
+          set -x
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "echo ✅ SSH connection successful"
+
+      - name: 🚀 Deploy to VM
+        run: |
+          set -x
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
+            set -x   # Debug mode inside VM
 
             echo "🔄 Switching to root and deploying..."
-            sudo -i -u root bash << 'EOF'
-              set -x   # 🔍 Enable debug mode inside root shell
+            sudo -i -u root bash << 'INNER'
+              set -x   # Debug mode inside root shell
 
               echo "🔄 Navigating to app directory or cloning if missing"
               if [ ! -d "~/GSAutoMech" ]; then
@@ -35,7 +40,7 @@ jobs:
               fi
               cd ~/GSAutoMech
 
-              echo "Pulling latest changes"
+              echo "📥 Pulling latest changes"
               git fetch origin main
               git reset --hard origin/main
 
@@ -58,4 +63,5 @@ jobs:
 
               echo "💾 Saving PM2 process list"
               pm2 save
-            EOF
+            INNER
+          EOF
