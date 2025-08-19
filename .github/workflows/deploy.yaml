@@ -28,9 +28,19 @@ jobs:
         run: |
           set -x
           ssh -tt -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-            # Switch to root
-            sudo -i << 'INNER'
+            sudo -i bash -lc '
               set -x
+
+              # Ensure nvm + pm2 are loaded
+              export NVM_DIR="/root/.nvm"
+              [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+              [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" || true
+
+              # Activate node version that has pm2
+              nvm use --lts >/dev/null 2>&1 || true
+
+              # Verify pm2 exists
+              command -v pm2 || { echo "❌ pm2 not found"; exit 1; }
 
               echo "🔄 Navigating to app directory or cloning if missing"
               if [ ! -d "/root/GSAutoMech" ]; then
@@ -61,5 +71,5 @@ jobs:
 
               echo "💾 Saving PM2 process list"
               pm2 save
-            INNER
+            '
           EOF
