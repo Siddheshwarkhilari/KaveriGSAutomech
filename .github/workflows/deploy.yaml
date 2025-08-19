@@ -14,15 +14,21 @@ jobs:
       - name: ⬆️ Checkout repo (for workflow use only)
         uses: actions/checkout@v4
 
-      - name: 🔑 SSH into VM and deploy
+      - name: 🔑 SSH into VM and deploy (Debug Mode)
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}   
+          username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
+          debug: true   # 🔍 Enable debug logs for SSH action
+          script_stop: true  # ❌ Stop immediately on error
           script: |
+            set -x   # 🔍 Print every command before executing
+
             echo "🔄 Switching to root and deploying..."
             sudo -i -u root bash << 'EOF'
+              set -x   # 🔍 Enable debug mode inside root shell
+
               echo "🔄 Navigating to app directory or cloning if missing"
               if [ ! -d "~/GSAutoMech" ]; then
                 git clone https://github.com/Siddheshwarkhilari/GSAutoMech.git ~/GSAutoMech
