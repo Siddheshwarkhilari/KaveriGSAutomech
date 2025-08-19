@@ -22,23 +22,21 @@ jobs:
       - name: 🧪 Test SSH connection (Debug Mode)
         run: |
           set -x
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "echo SSH connection successful"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "echo ✅ SSH connection successful"
 
-      - name: 🚀 Deploy to VM
+      - name: 🚀 Deploy to VM as root
         run: |
           set -x
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-            set -x   # Debug mode inside VM
-
-            echo "🔄 Switching to root and deploying..."
-            sudo -i -u root bash << 'INNER'
+          ssh -tt -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
+            # Switch to root shell
+            sudo su - root << 'INNER'
               set -x   # Debug mode inside root shell
 
               echo "🔄 Navigating to app directory or cloning if missing"
-              if [ ! -d "~/GSAutoMech" ]; then
-                git clone https://github.com/Siddheshwarkhilari/GSAutoMech.git ~/GSAutoMech
+              if [ ! -d "/root/GSAutoMech" ]; then
+                git clone https://github.com/Siddheshwarkhilari/GSAutoMech.git /root/GSAutoMech
               fi
-              cd ~/GSAutoMech
+              cd /root/GSAutoMech
 
               echo "📥 Pulling latest changes"
               git fetch origin main
