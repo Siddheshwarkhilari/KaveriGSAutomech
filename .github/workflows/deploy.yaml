@@ -56,6 +56,6 @@ jobs:
               pm2 delete gsautomech-dev || true
               pm2 start npm --name "gsautomech-dev" -- run dev
 
-              echo "💾 Saving PM2 process list and starting your app"
+              echo "💾 Saving PM2 process list"
               pm2 save
             EOF
