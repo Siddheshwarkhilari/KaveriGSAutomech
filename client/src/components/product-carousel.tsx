@@ -98,7 +98,7 @@ export function ProductCarousel() {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Main Carousel */}
-          <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[700px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
