@@ -18,7 +18,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}   # ubuntu user
+          username: ${{ secrets.VM_USER }}   
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
             echo "🔄 Switching to root and deploying..."
