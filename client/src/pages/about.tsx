@@ -8,30 +8,34 @@ import { slideUpStagger, staggerContainer } from "@/lib/animations";
 export default function About() {
   const timelineEvents = [
     {
-      year: "1995",
+      year: "2017",
       title: "Company Founded",
-      description: "Started as a small manufacturing unit with a vision for excellence"
+      description: "Started as a small manufacturing unit with a vision for excellence. starting with a single CNC machine  and a focused vision: to deliver precision machining with reliability, integrity, and care"
     },
     {
-      year: "2005",
+      year: "2021",
       title: "International Expansion",
-      description: "Expanded operations to serve global markets across 5 countries"
+      description: "A PRIVATE LIMITED COMPANY, key milestone in our journey of growth and formalization. from being a small, dependable workshop to becoming a Professionally Managed, Process-driven Company"
     },
     {
-      year: "2015",
+      year: "2022",
       title: "Technology Upgrade",
-      description: "Invested in cutting-edge machinery and automation systems"
+      description: "Home to numerous OEM’S , TIER 1 suppliers, and global manufacturing brands, Chakan offers direct access to a robust industrial ecosystem — including Vendors, Raw Material Suppliers, Logistics Providers , And Skilled Manpower"
     },
     {
-      year: "2020",
+      year: "2024",
       title: "Digital Transformation",
-      description: "Implemented Industry 4.0 solutions and smart manufacturing"
+      description: "We introduced Structured Documentation, Traceability Systems, and better control over workflow’s.With defined roles and responsibilities, our team became more organized and aligned with Long-term Goal’s. It also allowed us to implement financial discipline — enabling smarter reinvestment, Improved Planning, and eligibility for certifications and large-scale tenders."
     }
   ];
 
   const handleDownloadBrochure = () => {
-    // In a real app, this would download an actual PDF
-    alert("Company brochure download would start here");
+    const link = document.createElement("a");
+    link.href = "/brochure/company-brochure.pdf"; // relative to /public
+    link.download = "Company-Brochure.pdf"; // filename that will be saved
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -71,16 +75,26 @@ export default function About() {
             <motion.div variants={slideUpStagger}>
               <Card className="glass-morphism border-none shadow-lg">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">Our Story</h2>
+                  <h2 className="text-2xl font-bold text-foreground mb-6">Our Establishment</h2>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Founded in 1995, GS AutoMech has been at the forefront of precision 
-                    manufacturing and engineering solutions. We specialize in high-quality 
-                    automotive components, industrial hardware, and custom manufacturing services.
+                    Founded in 2017, Kaveri GS AutoMech established as a partnership firm with a strong emphasis on delivering quality and precision
+                    in every project.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Became Private Limited in 2021Transitioned to a structured, growth-focused company with formal systems and long-term vision,
+                    Significantly expanded our capabilities
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our commitment to innovation and quality has made us a trusted partner 
-                    for businesses worldwide, delivering solutions that meet the highest 
-                    industry standards and exceed customer expectations.
+                    Situated in Chakan, a thriving industrial hub near Pune, providing us with access to a robust ecosystem of talent, suppliers,
+                    and logistical advantages.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Every component undergoes a comprehensive series of stringent quality checks, ensuring exceptional precision and adherence 
+                    to standards before being dispatched to our customers.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We offer flexible manufacturing services, ranging from highly customized single-piece production to efficient batch production, 
+                    precisely tailored to customer drawings and specifications.
                   </p>
                 </CardContent>
               </Card>
@@ -114,14 +128,16 @@ export default function About() {
       {/* Timeline */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <motion.h2
+            <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center mb-12 text-foreground"
-          >
-            Our Journey
-          </motion.h2>
+            className="text-6xl md:text-6xl font-extrabold text-center mb-12 text-[hsl(var(--gs-primary))] drop-shadow-lg tracking-tight"
+            >
+            <span className="inline-block bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 bg-clip-text text-transparent">
+              Who We Are?
+            </span>
+            </motion.h2>
           
           <motion.div
             variants={staggerContainer}

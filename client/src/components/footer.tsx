@@ -44,8 +44,7 @@ export function Footer() {
   const contactInfo = [
     {
       icon: Phone,
-      label: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      label: "+91 9356561166"
     },
     {
       icon: Mail,
@@ -54,8 +53,8 @@ export function Footer() {
     },
     {
       icon: MapPin,
-      label: "123 Industrial Ave, Manufacturing District",
-      href: "#"
+      label: "plot no.1, Gate No. 483 Mahalaxmi Industrial Street, Near Bhangare Wasti, Mahalunge-Varale Road, Chakan Pune-410501.",
+      href: "https://www.google.com/maps/place/Mahalaxmi+Steel+Center/@18.7618031,73.8245339,13z/data=!4m10!1m2!2m1!1sGate+No.+483+Mahalaxmi+Industrial+Street,+Near+Bhangare+Wasti,+Mahalunge-Varale+Road,+Chakan+Pune-410501!3m6!1s0x3bc2ca1e689f9569:0x136b83d50fdae54c!8m2!3d18.7628798!4d73.8607368!15sCmhHYXRlIE5vLiA0ODMgTWFoYWxheG1pIEluZHVzdHJpYWwgU3RyZWV0LCBOZWFyIEJoYW5nYXJlIFdhc3RpLCBNYWhhbHVuZ2UtVmFyYWxlIFJvYWQsIENoYWthbiBQdW5lLTQxMDUwMVpmImRnYXRlIG5vIDQ4MyBtYWhhbGF4bWkgaW5kdXN0cmlhbCBzdHJlZXQgbmVhciBiaGFuZ2FyZSB3YXN0aSBtYWhhbHVuZ2UgdmFyYWxlIHJvYWQgY2hha2FuIHB1bmUgNDEwNTAxkgERcGFja2FnaW5nX2NvbXBhbnmaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTjFPWFJpWlZCbkVBRaoB7wEKCi9tLzAyNmdmd3cKCS9tLzA4c3piNBABKkkiRWdhdGUgbm8gNDgzIG1haGFsYXhtaSBpbmR1c3RyaWFsIHN0cmVldCBuZWFyIGJoYW5nYXJlIHdhc3RpIG1haGFsdW5nZSgAMh8QASIb2lmtmQpsAcmGj6nY_xdOXk9O0QUjsfVgItHJMmgQAiJkZ2F0ZSBubyA0ODMgbWFoYWxheG1pIGluZHVzdHJpYWwgc3RyZWV0IG5lYXIgYmhhbmdhcmUgd2FzdGkgbWFoYWx1bmdlIHZhcmFsZSByb2FkIGNoYWthbiBwdW5lIDQxMDUwMeABAPoBBAgAECc!16s%2Fg%2F1yf4rd_qg?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
     }
   ];
 
@@ -76,7 +75,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-[hsl(var(--gs-primary))] rounded-lg flex items-center justify-center">
                 <Settings className="text-white text-sm" />
               </div>
-              <span className="font-bold text-xl">GS AutoMech</span>
+              <span className="font-bold text-xl">Kaveri GS AutoMech</span>
             </div>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
@@ -175,39 +174,42 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-8"
         >
-          <Card className="glass-morphism border-white/10 bg-white/5">
-            <div className="p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground text-center">OUR TRUSTED PARTNER</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map((num) => (
-                  <motion.div
-                    key={num}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: num * 0.1 }}
-                    className="flex items-center justify-center p-3 rounded-lg bg-white/10"
-                  >
-                    <img
-                      src={`/partner-logos/partner-logo-${num}.png?t=${Date.now()}`}
-                      alt={`Partner ${num} Logo`}
-                      className="max-w-full max-h-12 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
-                          <svg width="80" height="40" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="80" height="40" fill="white" opacity="0.7" rx="4"/>
-                            <text x="40" y="25" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-size="8">
-                              Partner ${num}
-                            </text>
-                          </svg>
-                        `)}`;
-                      }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
+          <Card className="glass-morphism border-border bg-muted">
+          <div className="p-6">
+            <h3 className="font-semibold text-lg mb-4 text-foreground text-center">
+              OUR TRUSTED PARTNER
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[1, 2, 3, 4].map((num) => (
+                <motion.div
+                  key={num}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: num * 0.1 }}
+                  className="flex items-center justify-center p-3 rounded-lg bg-muted/50"
+                >
+                  <img
+                    src={`/partner-logos/partner-logo-${num}.png?t=${Date.now()}`}
+                    alt={`Partner ${num} Logo`}
+                    className="max-w-full max-h-16 object-contain"
+                    onError={(e) => {
+                      e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
+                        <svg width="80" height="40" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="80" height="40" fill="white" opacity="0.7" rx="4"/>
+                          <text x="40" y="25" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-size="8">
+                            Partner ${num}
+                          </text>
+                        </svg>
+                      `)}`;
+                    }}
+                  />
+                </motion.div>
+              ))}
             </div>
-          </Card>
+          </div>
+        </Card>
+
         </motion.div>
 
         {/* Contact Information */}
@@ -248,9 +250,9 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © {currentYear} GS AutoMech. All rights reserved. Precision Engineering Since 1995.
+              © {currentYear} Kaveri GS AutoMech. All rights reserved. Precision Engineering Since 2017.
             </div>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <Button
                 variant="ghost"
                 className="text-muted-foreground hover:text-foreground p-0 h-auto font-normal"
@@ -269,7 +271,7 @@ export function Footer() {
               >
                 Cookie Policy
               </Button>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

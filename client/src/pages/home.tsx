@@ -18,21 +18,21 @@ export default function Home() {
       title: "About Us",
       subtitle: "25+ Years Experience",
       href: "/about",
-      color: "hsl(var(--gs-primary))"
+      color: "hsl(220, 8.9%, 46.1%)"
     },
     {
       icon: Cog,
       title: "Products",
       subtitle: "Premium Quality",
       href: "/products",
-      color: "hsl(var(--gs-success))"
+      color: "hsl(220, 8.9%, 46.1%)"
     },
     {
       icon: Camera,
       title: "Gallery",
       subtitle: "Our Work",
       href: "/gallery",
-      color: "hsl(var(--gs-accent))"
+      color: "hsl(220, 8.9%, 46.1%)"
     },
     {
       icon: Phone,
@@ -45,9 +45,9 @@ export default function Home() {
 
   const stats = [
     { value: 25, suffix: "+", label: "Years Experience" },
-    { value: 500, suffix: "+", label: "Products" },
-    { value: 1000, suffix: "+", label: "Happy Clients" },
-    { value: 15, suffix: "+", label: "Countries" }
+    { value: 200, suffix: "+", label: "Products" },
+    { value: 100, suffix: "+", label: "Clients" },
+    { value: 15, suffix: "+", label: "States" }
   ];
 
   return (
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[hsl(var(--gs-primary))] text-white">
+      <section className="py-16 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
         <div className="container mx-auto px-4">
           <motion.div 
             variants={staggerContainer}

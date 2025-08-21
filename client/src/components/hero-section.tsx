@@ -117,6 +117,7 @@ export function HeroSection() {
         >
           <Button
             size="lg"
+            variant="outline"
             className="bg-[hsl(var(--gs-primary))] text-white hover:bg-[hsl(var(--gs-primary-light))] animate-pulse-glow px-8 py-3 rounded-full font-semibold"
             onClick={() => setLocation("/about")}
           >
