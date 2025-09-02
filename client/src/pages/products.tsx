@@ -7,38 +7,38 @@ export default function Products() {
   const products = [
     {
       id: 1,
-      name: "Heavy Duty Industrial Hinge",
-      description: "Robust stainless steel hinges for heavy machinery applications",
+      name: "Heavy-Duty Stainless Steel Hinge",
+      description: "Built for tough industrial use, offering strength and corrosion resistance.",
       image: "/products/product-images/product-1.webp"
     },
     {
       id: 2,
-      name: "Precision Ball Bearings",
-      description: "High-precision ball bearings for smooth mechanical operations",
+      name: "Customized Flange",
+      description: "Ensures smooth motion and low friction in high-speed mechanical systems.",
       image: "/products/product-images/product-2.webp"
     },
     {
       id: 3,
-      name: "Industrial Control Valve",
-      description: "Advanced control valves for fluid and gas management systems",
+      name: "Customized Panel Locks",
+      description: "Tailored locking solutions for various industrial applications.",
       image: "/products/product-images/product-3.webp"
     },
     {
       id: 4,
-      name: "Hydraulic Cylinder",
-      description: "Powerful hydraulic cylinders for heavy-duty industrial applications",
+      name: "High tensile Fasteners",
+      description: "High-strength fasteners for industrial applications",
       image: "/products/product-images/product-35.webp"
     },
     {
       id: 5,
-      name: "Gear Assembly Unit",
-      description: "Precision-engineered gear assemblies for mechanical systems",
+      name: "Door Hinge Assembly",
+      description: "Built for tough industrial use, offering strength and corrosion resistance.",
       image: "/products/product-images/product-5.webp"
     },
     {
       id: 6,
-      name: "Motor Coupling",
-      description: "Flexible motor couplings for vibration damping and alignment",
+      name: "Panel Locks",
+      description: "Secure locking solutions for industrial panels",
       image: "/products/product-images/product-6.webp"
     },
     {
@@ -49,56 +49,56 @@ export default function Products() {
     },
     {
       id: 8,
-      name: "Pneumatic Actuator",
-      description: "Efficient pneumatic actuators for automated control systems",
+      name: "Door Lock Handle",
+      description: "Ergonomic handles designed for industrial door locks",
       image: "/products/product-images/product-8.webp"
     },
     {
       id: 9,
-      name: "New Product A",
-      description: "Custom part for advanced automation",
+      name: "Hinge",
+      description: "Durable hinges for industrial applications",
       image: "/products/product-images/product-28.webp"
     },
     {
       id: 10,
-      name: "New Product B",
-      description: "High-efficiency sensor integration",
+      name: "Handle holder",
+      description: "Robust holders for secure handle mounting",
       image: "/products/product-images/product-10.webp"
     },
     {
       id: 11,
-      name: "New Product B",
-      description: "High-efficiency sensor integration",
+      name: "Refer Lock Set",
+      description: "Secure locking solutions for refrigeration units",
       image: "/products/product-images/product-11.webp"
     },
     {
       id: 12,
-      name: "New Product C",
-      description: "Precision-engineered component for robotics",
+      name: "Tube Guide",
+      description: "Precision-engineered tube guides for smooth operation",
       image: "/products/product-images/product-12.webp"
     },
     {
       id: 13,
-      name: "New Product D",
-      description: "Advanced actuator for industrial automation",
+      name: "Keeper",
+      description: "Durable keepers for secure panel locking",
       image: "/products/product-images/product-13.webp"
     },
     {
       id: 14,
-      name: "New Product E",
-      description: "Custom part for advanced automation",
+      name: "Cam & Keeper",
+      description: "Integrated cam and keeper solutions for secure locking",
       image: "/products/product-images/product-14.webp"
     },
     {
       id: 15,
-      name: "New Product F",
-      description: "High-efficiency sensor integration",
+      name: "Clevise",
+      description: "Heavy-duty clevis for secure connections",
       image: "/products/product-images/product-30.webp"
     },
     {
       id: 15,
-      name: "New Product F",
-      description: "High-efficiency sensor integration",
+      name: "Hinges",
+      description: "Durable hinges for industrial applications",
       image: "/products/product-images/product-16.webp"
     },
     {
@@ -109,20 +109,20 @@ export default function Products() {
     },
     {
       id: 17,
-      name: "New Product H",
-      description: "Advanced actuator for industrial automation",
+      name: "Hinge",
+      description: "Durable hinges for industrial applications",
       image: "/products/product-images/product-18.webp"
     },
     {
       id: 18,
-      name: "New Product I",
-      description: "Custom part for advanced automation",
+      name: "U bolt",
+      description: "Heavy-duty U bolts for secure fastening",
       image: "/products/product-images/product-19.webp"
     },
     {
       id: 20,
-      name: "New Product K",
-      description: "Precision-engineered component for robotics",
+      name: "U bolt",
+      description: "Precision-engineered U bolts for secure fastening",
       image: "/products/product-images/product-21.webp"
     },
     {
@@ -145,26 +145,26 @@ export default function Products() {
     },
     {
       id: 24,
-      name: "New Product O",
-      description: "Precision-engineered component for robotics",
+      name: "Container refer lock set",
+      description: "Secure locking solutions for refrigeration units",
       image: "/products/product-images/product-25.webp"
     },
     {
       id: 25,
-      name: "New Product H",
-      description: "Advanced actuator for industrial automation",
+      name: "Hinge",
+      description: "Durable hinges for industrial applications",
       image: "/products/product-images/product-26.webp"
     },
     {
       id: 26,
-      name: "New Product I",
-      description: "Custom part for advanced automation",
+      name: "Tube Guide",
+      description: "Precision-engineered tube guides for smooth operation",
       image: "/products/product-images/product-7.webp"
     },
     {
       id: 27,
-      name: "New Product K",
-      description: "Precision-engineered component for robotics",
+      name: "Hinge",
+      description: "Durable hinges for industrial applications",
       image: "/products/product-images/product-9.webp"
     },
     {
@@ -175,32 +175,32 @@ export default function Products() {
     },
     {
       id: 29,
-      name: "New Product M",
-      description: "Custom part for advanced automation",
+      name: "Handle",
+      description: "Ergonomic handles for easy operation",
       image: "/products/product-images/product-15.webp"
     },
     {
       id: 30,
-      name: "New Product N",
-      description: "High-efficiency sensor integration",
+      name: "Cable Tray",
+      description: "High-efficiency cable management solutions",
       image: "/products/product-images/product-29.webp"
     },
     {
       id: 31,
-      name: "New Product O",
-      description: "Precision-engineered component for robotics",
+      name: "Door Hinge",
+      description: "Durable door hinges for industrial applications",
       image: "/products/product-images/product-32.webp"
     },
     {
       id: 32,
-      name: "New Product L",
-      description: "Advanced actuator for industrial automation",
+      name: "U Bracket",
+      description: "Heavy-duty U brackets for secure mounting",
       image: "/products/product-images/product-33.webp"
     },
     {
       id: 33,
-      name: "New Product M",
-      description: "Custom part for advanced automation",
+      name: "Canopy Locks",
+      description: "Secure locking solutions for refrigeration units",
       image: "/products/product-images/product-34.webp"
     },
     {

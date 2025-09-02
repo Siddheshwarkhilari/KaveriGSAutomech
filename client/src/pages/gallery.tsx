@@ -8,44 +8,44 @@ export default function Gallery() {
     {
       id: 1,
       src: "/gallery/gallery-photos/photo-2.webp",
-      alt: "Manufacturing Floor",
-      description: "State-of-the-art manufacturing facility with precision equipment"
+      alt: "Engineering Excellence Together",
+      description: "A snapshot of our dynamic team collaborating to deliver precision and quality in every project with cutting-edge technology."
     },
     {
       id: 2,
       src: "/gallery/gallery-photos/photo-1.webp",
-      alt: "Precision Machinery",
-      description: "High-precision CNC machines ensuring quality production"
+      alt: "Passion in Action",
+      description: "Focused, skilled, and dedicated—our team ensures smooth operations and flawless execution on the shop floor."
     },
     {
       id: 3,
-      src: "/gallery/gallery-photos/photo-11.webp",
-      alt: "Quality Control",
-      description: "Rigorous quality testing procedures and inspection"
+      src: "/gallery/gallery-photos/photo-12.webp",
+      alt: "Leading with Vision",
+      description: "Our director sets the strategic direction, blending experience and innovation to guide the company forward."
     },
     {
       id: 4,
-      src: "/gallery/gallery-photos/photo-12.webp",
-      alt: "Team Working",
-      description: "Skilled technicians working on industrial components"
+      src: "/gallery/gallery-photos/photo-11.webp",
+      alt: "Driving Operational Excellence",
+      description: "Committed to efficiency and quality, our director ensures every process aligns with our high standards."
     },
     {
       id: 5,
-      src: "/gallery/gallery-photos/photo-5.webp",
-      alt: "Warehouse",
-      description: "Modern warehouse facility for efficient inventory management"
+      src: "/gallery/gallery-photos/photo-7.webp",
+      alt: "Championing Growth and Innovation",
+      description: "With a keen eye on industry trends, our director fosters innovation and continuous improvement."
     },
     {
       id: 6,
-      src: "/gallery/gallery-photos/photo-6.webp",
-      alt: "Finished Products",
-      description: "Completed products ready for delivery to clients"
+      src: "/gallery/gallery-photos/photo-5.webp",
+      alt: "Precision at Work",
+      description: "Every cut, every component—our skilled workers make sure accuracy and quality come first."
     },
     {
       id: 7,
-      src: "/gallery/gallery-photos/photo-7.webp",
-      alt: "Industrial Equipment",
-      description: "Advanced industrial machinery and automated systems"
+      src: "/gallery/gallery-photos/photo-6.webp",
+      alt: "Hands That Build Excellence",
+      description: "Dedicated craftsmanship and attention to detail define the work of our valued team members."
     },
     {
       id: 8,
@@ -56,26 +56,20 @@ export default function Gallery() {
     {
       id: 9,
       src: "/gallery/gallery-photos/photo-9.webp",
-      alt: "Assembly Process",
-      description: "Assembly process for complex industrial components"
+      alt: "Quality Inspection",
+      description: "Inspecting and measuring industrial components to ensure accuracy and precision."
     },
     {
       id: 10,
       src: "/gallery/gallery-photos/photo-10.webp",
-      alt: "Research and Development",
-      description: "R&D team working on innovative engineering solutions"
-    },
-    {
-      id: 11,
-      src: "/gallery/gallery-photos/photo-3.webp",
-      alt: "Safety Protocols",
-      description: "Strict safety protocols in place for a secure work environment"
+      alt: "Assembly Process",
+      description: "Assembly process for complex industrial components carried out on the shop floor."
     },
     {
       id: 12,
       src: "/gallery/gallery-photos/photo-4.webp",
-      alt: "Client Collaboration",
-      description: "Collaborating with clients to meet their specific needs"
+      alt: "On Floor Machining",
+      description: "Precision machining of components on the shop floor."
     }
   ];
 
